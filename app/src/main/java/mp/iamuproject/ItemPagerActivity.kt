@@ -12,7 +12,6 @@ class ItemPagerActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityItemPagerBinding
     private lateinit var items: MutableList<Item>
-
     private var itemPosition = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {

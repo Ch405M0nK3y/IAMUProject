@@ -22,7 +22,6 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         startAnimations()
         redirect()
     }
@@ -33,14 +32,10 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun redirect() {
-
         if (getBooleanPreference(DATA_IMPORTED)) {
             callDelayed(DELAY) { startActivity<HostActivity>() }
-
         } else {
-
             if (isOnline()) {
-
                 WorkManager.getInstance(this).apply {
                     enqueueUniqueWork(
                         DATA_IMPORTED,
@@ -48,12 +43,10 @@ class SplashScreenActivity : AppCompatActivity() {
                         OneTimeWorkRequest.Companion.from(HNWorker::class.java)
                     )
                 }
-
             } else {
                 binding.tvSplash.text = getString(R.string.no_internet)
                 callDelayed(DELAY) { finish() }
             }
         }
     }
-
 }

@@ -30,7 +30,6 @@ class HNProvider : ContentProvider() {
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
         when(URI_MATCHER.match(uri)) {
             ITEMS -> return repository.delete(selection, selectionArgs)
-            // "mp.iamuproject.api.provider/items/55"
             ITEM_ID -> uri.lastPathSegment?.let {
                 return repository.delete("${Item::_id.name}=?", arrayOf(it))
             }
@@ -72,7 +71,6 @@ class HNProvider : ContentProvider() {
     ): Int {
         when(URI_MATCHER.match(uri)) {
             ITEMS -> return repository.update(values, selection, selectionArgs)
-            // "mp.iamuproject.api.provider/items/55"
             ITEM_ID -> uri.lastPathSegment?.let {
                 return repository.update(values, "${Item::_id.name}=?", arrayOf(it))
             }

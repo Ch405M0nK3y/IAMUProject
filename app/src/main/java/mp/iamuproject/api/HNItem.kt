@@ -1,5 +1,6 @@
 package mp.iamuproject.api
 
+import org.simpleframework.xml.Attribute
 import org.simpleframework.xml.Element
 import org.simpleframework.xml.Root
 
@@ -12,4 +13,11 @@ class HNItem{
     @field:Element(name = "author", required = false) var author: String? = null
     @field:Element(name = "guid") var guid: String? = null
     @field:Element(name = "enclosure", required = false) var enclosure: Enclosure? = null
+}
+
+@Root(name = "enclosure", strict = false)
+class Enclosure {
+    @field:Attribute(name = "url", required = false) var url: String? = null
+    @field:Attribute(name = "type", required = false) var type: String? = null
+    @field:Attribute(name = "length", required = false) var length: Long? = null
 }

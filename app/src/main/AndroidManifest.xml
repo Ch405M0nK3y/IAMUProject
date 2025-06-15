@@ -16,9 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HN"
         tools:targetApi="31">
-        <activity
-            android:name=".ItemPagerActivity"
-            android:exported="false" />
 
         <provider
             android:name=".HNProvider"
@@ -32,8 +29,13 @@
             android:exported="false" />
 
         <activity
+            android:name=".ItemPagerActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".HostActivity"
             android:exported="false" />
+
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
@@ -43,10 +45,8 @@
             tools:ignore="DiscouragedApi">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

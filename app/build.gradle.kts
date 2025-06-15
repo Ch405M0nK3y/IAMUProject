@@ -61,12 +61,7 @@ dependencies {
 
     // retrofit
     implementation(libs.retrofit)
-    implementation(libs.gson)
-    implementation(libs.retrofit2.converter.gson)
-
-    // jsoup and converter for rss feed
     implementation("com.squareup.retrofit2:converter-simplexml:2.9.0")
-    implementation("org.jsoup:jsoup:1.17.2")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
