@@ -14,7 +14,7 @@ private const val AUTHORITY = "mp.iamuproject.api.provider"
 private const val PATH = "items"
 val HN_PROVIDER_CONTENT_URI: Uri = Uri.parse("content://$AUTHORITY/$PATH")
 
-private const val ITEMS = 10
+private const val ITEMS = 20
 private const val ITEM_ID = 20
 
 private val URI_MATCHER = with(UriMatcher(UriMatcher.NO_MATCH)){

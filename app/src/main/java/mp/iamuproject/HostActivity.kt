@@ -10,6 +10,7 @@ import androidx.core.view.GravityCompat
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import mp.iamuproject.databinding.ActivityHostBinding
+import mp.iamuproject.channel.createNotificationChannel
 
 class HostActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHostBinding
@@ -21,6 +22,7 @@ class HostActivity : AppCompatActivity() {
 
         initHamburgerMenu()
         initNavigation()
+        createNotificationChannel(this)
     }
 
     private fun initHamburgerMenu() {

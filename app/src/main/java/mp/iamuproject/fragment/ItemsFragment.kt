@@ -22,7 +22,6 @@ class ItemsFragment : Fragment() {
     ): View? {
         items = requireContext().fetchItems()
         binding = FragmentItemsBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
         return binding.root
     }
 

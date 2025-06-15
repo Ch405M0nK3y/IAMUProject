@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import mp.iamuproject.ITEM_POSITION
@@ -17,6 +18,7 @@ import mp.iamuproject.R
 import mp.iamuproject.framework.startActivity
 import mp.iamuproject.model.Item
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation
+import mp.iamuproject.channel.sendNotification
 import java.io.File
 
 class ItemAdapter(
@@ -76,6 +78,7 @@ class ItemAdapter(
         )
         items.removeAt(position)
         File(item.picturePath).delete()
-        notifyDataSetChanged()
+        notifyItemRemoved(position)
+        sendNotification(context, "Post was deleted", item.title)
     }
 }

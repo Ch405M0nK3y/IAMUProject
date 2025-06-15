@@ -25,12 +25,12 @@ class ItemPagerAdapter(
         val ivRead = itemView.findViewById<ImageView>(R.id.ivRead)
         private val tvItem = itemView.findViewById<TextView>(R.id.tvItem)
         private val tvDate = itemView.findViewById<TextView>(R.id.tvDate)
-        private val tvExplanation = itemView.findViewById<TextView>(R.id.tvDescription)
+        private val tvDescription = itemView.findViewById<TextView>(R.id.tvDescription)
         private val tvAuthor = itemView.findViewById<TextView>(R.id.tvAuthor)
         fun bind(item: Item) {
             tvItem.text = item.title
             tvDate.text = item.date
-            tvExplanation.text = item.description
+            tvDescription.text = item.description
             tvAuthor.text = item.author
             ivRead.setImageResource(
                 if(item.read) R.drawable.green_flag else R.drawable.red_flag

@@ -9,7 +9,7 @@ class HNWorker(
     workerParams: WorkerParameters
 ) : Worker(context, workerParams){
     override fun doWork(): Result {
-        HNFetcher(context).fetchItems(10)
+        HNFetcher(context).fetchItems(20)
         return Result.success()
     }
 }

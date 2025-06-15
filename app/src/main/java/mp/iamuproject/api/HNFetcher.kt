@@ -50,7 +50,6 @@ class HNFetcher(private val context: Context) {
         val scope = CoroutineScope(Dispatchers.IO)
         scope.launch {
             hnItems.forEach { item ->
-                // Prepare data, get the image from link
                 val imageUrl = item.enclosure?.takeIf { it.type?.startsWith("image/") ?: false  }?.url
                 val picturePath = imageUrl?.let { downloadImage(context, it) } ?: ""
                 val values = ContentValues().apply {
